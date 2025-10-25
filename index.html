@@ -1,215 +1,310 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="icon" type="image/png" href="image/favicon.ico">
-		<title>THUY TRANG </title>    
-        <link type="text/css" rel="stylesheet" href="./renxi/default.css">
-		<script type="text/javascript" src="./renxi/jquery.min.js"></script>
-		<script type="text/javascript" src="./renxi/jscex.min.js"></script>
-		<script type="text/javascript" src="./renxi/jscex-parser.js"></script>
-		<script type="text/javascript" src="./renxi/jscex-jit.js"></script>
-		<script type="text/javascript" src="./renxi/jscex-builderbase.min.js"></script>
-		<script type="text/javascript" src="./renxi/jscex-async.min.js"></script>
-		<script type="text/javascript" src="./renxi/jscex-async-powerpack.min.js"></script>
-		<script type="text/javascript" src="./renxi/functions.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./renxi/love.js" charset="utf-8"></script>
-
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bang — CV / Portfolio</title>
+  <meta name="description" content="CV & Portfolio cá nhân của Bang." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-    <body>
- 
-			<audio autoplay="autoplay" >
-					<source src="music/nhac.mp3" type="audio/mp3" />
-            </audio> 
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main">
+      <a class="logo" href="#top" aria-label="Trang chủ">
+        <span class="logo-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.9L18.2 22 12 18.56 5.8 22 7 14.17l-5-4.9 6.91-1.01L12 2z"/></svg>
+        </span>
+        <span>Bang</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">Thông tin</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+        <!-- <a href="#gallery">Ảnh</a> -->
+        <label for="theme-toggle" class="btn" style="cursor:pointer; padding:8px 12px; border-radius:10px">Theme</label>
+      </nav>
+      <input id="theme-toggle" type="checkbox" hidden>
+    </div>
+  </header>
 
-          
+  <!-- ================= Marquee (Yêu cầu 12) ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>HTML</span><span>CSS</span><span>Responsive</span><span>Accessibility</span><span>PHP</span><span>Python</span><span>FastAPI</span><span>MySQL</span><span>CMD</span><span>WSL</span>
+      <span>HTML</span><span>CSS</span><span>Responsive</span><span>Accessibility</span><span>PHP</span><span>Python</span><span>FastAPI</span><span>MySQL</span><span>CMD</span><span>WSL</span>
+    </div>
+  </div>
 
-        <div id="main">
-            <div id="error">Trình duyệt của bạn không được hỗ trợ. Để được hỗ trợ liên hệ genzhoccode@gmail.com. Hoặc sử dụng (<a href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)</div>
-             <div id="wrap">
-                <div id="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">
-			        <div id="code">
-			      <font color="#000" ><span class="say">Xin chào cô gái của anh!</span><br>
-						<span class="say"> </span><br>
-						<span class="say">Anh thật sự không có quá nhiều lời hoa mỹ để dành tặng cho em trong ngày hôm nay</span><br>
-						<span class="say">Chỉ mong rằng em luôn bình an, luôn yên vui và luôn hạnh phúc .</span><br>
-						<span class="say">Mãi yêu <3 </span><br>
-                        
-                        <span class="say"><span class="space"><img width="100px" height="100px" src="image/tym.png" alt=""><br>
-                        
-			  </font></p>
-      </div>
-                </div>
-                <div id="clock-box">
-                    <!-- <span class="STYLE1"></span><font color="#FF0000">Ngày 8/3 cuối cùng ta ngồi với nhau đến nay đã....</font> -->
-<!-- <span class="STYLE1"> Time of love...</span> -->
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            
+  <main id="top" class="container">
+    <!-- ================= Hero Section (Yêu cầu 11) ================= -->
+    <section aria-label="Hero">
+      <div class="hero">
+        <div>
+          <span class="tagline"><span class="pill">xin chao</span><span class="pill">Fast • Accessible</span></span>
+          <h1>Xin chào, mình là Tran Hai Bang sinh viên IT UTH.</h1>
+          <p class="muted">developer tập trung vào UX mượt và kiến trúc đơn giản. Bên dưới là CV ngắn gọn và một vài dự án tiêu biểu.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">Xem Dự án</a>
+            <a class="btn" href="#contact">Liên hệ</a>
+            <a class="btn underline" href="#hire">Hire me</a>
+          </div>
         </div>
-    
-    <script>
-    </script>
+        <div class="card preview" aria-hidden="true">
+          <img src="4.jpg" alt="Preview" style="width:100%; height:100%; object-fit:cover; opacity:.9">
+        </div>
+      </div>
+    </section>
 
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-		
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
+    <!-- ================= Thông tin cá nhân (Yêu cầu 3) ================= -->
+    <section id="about" aria-label="Thông tin cá nhân">
+      <h2 class="section-title"><span class="dot"></span> Thông tin cá nhân</h2>
 
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
+      <!-- Layout mix: grid + flex (Yêu cầu 2) -->
+      <div class="about-grid">
+        <!-- Info card -->
+        <div class="card about-card">
+          <ul class="info">
+            <li><span>Họ tên</span><strong>Trần Hải Bằng</strong></li>
+            <li><span>Vị trí</span><strong>Frontend/Backend (PHP • Python)</strong></li>
+            <li><span>Email</span><a class="underline" href="mailto:bangth5769@ut.edu.com">bangth5769@ut.edu.com</a></li>
+            <li><span>GitHub</span><a class="underline" href="https://github.com/BangTran1">github.com/BangTran1</a></li>
+            <li><span>ĐT</span><strong>+84 9xx xxx xxx</strong></li>
+            <li><span>Địa chỉ</span><strong>TP. Hồ Chí Minh</strong></li>
+          </ul>
+        </div>
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+        <!-- Mục tiêu nghề nghiệp (Yêu cầu 4) -->
+        <div class="card about-card">
+          <h3 class="sub-title">Mục tiêu nghề nghiệp</h3>
+          <p class="muted">Làm product web nhanh, sạch, a11y. Ưu tiên architecture đơn giản: <strong>semantic HTML</strong>, <strong>utility CSS</strong>, backend gọn (<strong>PHP</strong>/<strong>Python</strong>) và <strong>MySQL</strong>. Ngắn hạn: thực tập Full‑stack; dài hạn: build dịch vụ AI/Docs tốc độ cao.</p>
+        </div>
 
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
+        <!-- Sở thích (Yêu cầu 5) -->
+        <div class="card about-card hobbies">
+          <h3 class="sub-title">Sở thích</h3>
+          <ul class="chips">
+            <li>🏃 Workout</li>
+            <li>🎧 Lofi</li>
+            <li>📚 Reading</li>
+            <li>🛠️ Tối ưu CLI</li>
+            <li>calisthenic và muay </li>
+          </ul>
+        </div>
+      </div>
 
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
+      <!-- Tabs CSS-only (Yêu cầu 10) -->
+      <div class="tabs">
+        <input type="radio" id="tab-bio" name="about-tab" checked>
+        <input type="radio" id="tab-services" name="about-tab">
+        <input type="radio" id="tab-awards" name="about-tab">
+        <div class="controls tab-controls controls">
+          <label for="tab-bio">Bio</label>
+          <label for="tab-services">Services</label>
+          <label for="tab-awards">Chứng chỉ - Giải thưởng</label>
+        </div>
+        <div class="panels">
+          <div class="tab-panel card" id="panel-bio" style="padding:18px">
+            <p>Mục tiêu của mình là biến những yêu cầu phức tạp thành trải nghiệm đơn giản, hiệu năng cao. Ưu tiên <strong>semantic HTML</strong>, <strong>utility CSS</strong> và <strong>a11y</strong>.</p>
+            <p class="muted">Stack ưa thích: HTML/CSS thuần, PHP/Laravel, Python, MySQL, chạy local thân thiện CMD/PowerShell.</p>
+          </div>
+          <div class="tab-panel card" id="panel-services" style="padding:18px">
+            <ul>
+              <li>UI audit & redesign (WCAG AA)</li>
+              <li>Landing siêu nhanh (no build, no JS)</li>
+              <li>Dashboard PHP/MySQL + CSS utilities</li>
+              <li>Docs site & blog tĩnh (pure HTML/CSS)</li>
+            </ul>
+          </div>
+          <!-- Chứng chỉ - Giải thưởng (Yêu cầu 7) -->
+          <div class="tab-panel card" id="panel-awards" style="padding:18px">
+            <ul class="awards">
+              <li><em>Không có</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
+    <!-- ================= Kỹ năng (Yêu cầu 6) ================= -->
+    <section id="skills" aria-label="Kỹ năng">
+      <h2 class="section-title"><span class="dot"></span> Ngôn ngữ & Kỹ năng</h2>
+      <div class="skills">
+        <div class="skill">
+          <div class="k">Frontend</div>
+          <div class="v">HTML • CSS • Responsive</div>
+        </div>
+        <div class="skill">
+          <div class="k">Backend</div>
+          <div class="v">PHP • Python • REST</div>
+        </div>
+        <div class="skill">
+          <div class="k">Database</div>
+          <div class="v">MySQL • Design</div>
+        </div>
+        <div class="skill">
+          <div class="k">Tooling</div>
+          <div class="v">CMD • WSL • Git</div>
+        </div>
+        <div class="skill">
+          <div class="k">Python</div>
+          <div class="v">requests • CLI</div>
+        </div>
+      </div>
 
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
+      <!-- Languages bars -->
+      <div class="lang-grid">
+        <div class="lang">
+          <div class="head"><strong>Tiếng Việt</strong><span>Native</span></div>
+          <div class="bar"><span style="--pct:100%"></span></div>
+        </div>
+        <div class="lang">
+          <div class="head"><strong>English</strong><span>B2</span></div>
+          <div class="bar"><span style="--pct:70%"></span></div>
+        </div>
+        <div class="lang">
+          <div class="head"><strong>python</strong><span>good</span></div>
+          <div class="bar"><span style="--pct:85%"></span></div>
+        </div>
+      </div>
+    </section>
 
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
+    <!-- ================= Dự án (Yêu cầu 8) ================= -->
+    <section id="projects" aria-label="Projects" class="reveal">
+      <h2 class="section-title"><span class="dot"></span> Dự án tiêu biểu</h2>
+      <div class="carousel card">
+        <input type="radio" name="slide" id="s1" checked>
+        <input type="radio" name="slide" id="s2">
+        <input type="radio" name="slide" id="s3">
+        <input type="radio" name="slide" id="s4">
+        <div class="viewport">
+          <div class="slides">
+            <div class="slide">
+              <article class="project card">
+                <div class="thumb"><img alt="KOI Admin" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop"></div>
+                <div class="body">
+                  <h3>KOI Admin – Inventory</h3>
+                  <p class="muted">Dashboard quản lý sản phẩm, đơn hàng, tồn kho thời gian thực.</p>
+                  <div class="tags"><span class="tag" data-tip="Server-side">PHP</span><span class="tag" data-tip="Relational DB">MySQL</span><span class="tag" data-tip="Utility-first">CSS</span></div>
+                </div>
+              </article>
+            </div>
+            <div class="slide">
+              <article class="project card">
+                <div class="thumb"><img alt="TechLearning" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"></div>
+                <div class="body">
+                  <h3>TechLearning – AI Service</h3>
+                  <p class="muted">Dịch vụ AI: chat, dịch PDF, xử lý tài liệu (FastAPI).</p>
+                  <div class="tags"><span class="tag" data-tip="API">Python</span><span class="tag" data-tip="Web framework">FastAPI</span><span class="tag" data-tip="Styling">CSS</span></div>
+                </div>
+              </article>
+            </div>
+            <div class="slide">
+              <article class="project card">
+                <div class="thumb"><img alt="Koi Shop" src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop"></div>
+                <div class="body">
+                  <h3>Koi Shop – E‑Commerce</h3>
+                  <p class="muted">Website bán hàng tối ưu UX, đơn giản nhưng đầy đủ.</p>
+                  <div class="tags"><span class="tag" data-tip="Markup">HTML</span><span class="tag" data-tip="Server-side">PHP</span><span class="tag" data-tip="Relational DB">MySQL</span></div>
+                </div>
+              </article>
+            </div>
+            <div class="slide">
+              <article class="project card">
+                <div class="thumb"><img alt="Front Admin" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1200&auto=format&fit=crop"></div>
+                <div class="body">
+                  <h3>Front Admin – Analytics</h3>
+                  <p class="muted">Báo cáo bán hàng, biểu đồ và phân quyền role-based.</p>
+                  <div class="tags"><span class="tag" data-tip="Dashboards">Admin</span><span class="tag" data-tip="AuthN/AuthZ">RBAC</span><span class="tag" data-tip="Charts">Analytics</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="dots-wrap"><div class="dots">
+          <label class="dot" for="s1"></label>
+          <label class="dot" for="s2"></label>
+          <label class="dot" for="s3"></label>
+          <label class="dot" for="s4"></label>
+        </div></div>
+      </div>
+    </section>
 
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
+    <!-- ================= Ảnh cá nhân (Yêu cầu 13) ================= -->
+    <section id="gallery" aria-label="Ảnh cá nhân">
+      <h2 class="section-title"><span class="dot"></span> Ảnh cá nhân</h2>
+      <div class="gallery">
+        <figure class="g-card tilt"><img src="1.jpg" alt="Ảnh 1"><figcaption>tôi 1</figcaption></figure>
+        <figure class="g-card tilt"><img src="2.jpg" alt="Ảnh 2"><figcaption>tôi 2</figcaption></figure>
+        <figure class="g-card tilt"><img src="3.jpg" alt="Ảnh 3"><figcaption>tôi 3</figcaption></figure>
+        <figure class="g-card tilt"><img src="4.jpg" alt="Ảnh 4"><figcaption>tôi 4</figcaption></figure>
+      </div>
+    </section>
 
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
+    <!-- ================= Liên hệ (Yêu cầu 9) ================= -->
+    <section id="contact" aria-label="Contact" class="contact">
+      <h2 class="section-title"><span class="dot"></span> Liên hệ</h2>
+      <div class="grid">
+        <div class="card">
+          <p><strong>Hợp tác hoặc trao đổi ý tưởng?</strong> Mình trả lời nhanh qua email và GitHub.</p>
+          <div class="list">
+            <a class="link" href="mailto:bangth5769@ut.edu.com">bangth5769@ut.edu.com</a>
+            <a class="link" href="https://github.com/BangTran1" aria-label="GitHub">💻 github.com/BangTran1</a>
+            <a class="link" href="https://www.facebook.com/chube.ngungo.7" aria-label="Facebook">🔗 facebook.com/chube.ngungo.7</a>
+            <a class="link" href="https://www.instagram.com/trn_hb04/" aria-label="Instagram">📷 instagram.com/trn_hb04</a>
+          </div>
+        </div>
+        <div class="card">
+          <ul>
+            <li>mãi 1 tình yêu với python</li>
+            <li>chào mừng bạn đến thế giới của tôi, nơi mà bao ưu phiền của bạn sẽ tan biến nếu chúng ta hợp nhau, đừng quên gửi tâm tình của bạn qua mxh cho tớ nhé <3</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        var textAnimate = eval(Jscex.compile("async", function () {
-		    // var together = new Date();
-		    // together.setFullYear(2024,10 , 18); 			
-		    // together.setHours(0);							
-		    // together.setMinutes(0);				
-		    // together.setSeconds(0);					
-            // together.setMilliseconds(0);
-            
-           
+    <div class="blobs" aria-hidden="true">
+      <div class="blob orange" style="top:-120px; left:-160px"></div>
+      <div class="blob cyan" style="bottom:-180px; right:-120px"></div>
+    </div>
+  </main>
 
-		    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
+  <footer>
+    <div class="container">© <span id="y">2025</span> Bang. Made with ♥bngtran04</div>
+  </footer>
 
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
+  <!-- ================= Modal: Hire me ================= -->
+  <div id="hire" class="modal">
+    <div class="dialog">
+      <header><strong>Hire Bang</strong><a class="icon-close" href="#top" aria-label="Đóng"><span aria-hidden="true">×</span></a></header>
+      <div class="content">
+        <p>Gửi mình vài dòng mô tả yêu cầu: phạm vi, deadline, ngân sách dự kiến. Mình sẽ phản hồi trong ngày.</p>
+        <ul>
+          <li>Email: <a class="underline" href="mailto:bangth5769@ut.edu.com">bangth5769@ut.edu.com</a></li>
+          <li>GitHub: <a class="underline" href="https://github.com/BangTran1">https://github.com/BangTran1</a></li>
+        </ul>
+      </div>
+      <a class="close btn" href="#top">Đóng</a>
+    </div>
+  </div>
 
-            textAnimate().start();
+  <!-- SVG filters -->
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="wavy">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="8"/>
+      <feDisplacementMap in="SourceGraphic" scale="6"/>
+    </filter>
+  </svg>
 
-            $await(jumpAnimate());
-        }));
+  <!-- vcl.html background iframe -->
+  <iframe id="vcl-background" src="vcl.html" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-10; border:none; pointer-events:none;"></iframe>
 
-        runAsync().start();
-    })();
-    </script>
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-<!-- <p>Contact: <a href="https://www.facebook.com/dai.vudangdai" target="_blank">dangdaiptit</a></p> -->
-</div>
+  <!-- Scripts - Load performance monitor first -->
+  <script src="performance-monitor.js"></script>
+  <script src="script.js"></script>
+  <script src="advanced-effects.js"></script>
 </body>
 </html>
