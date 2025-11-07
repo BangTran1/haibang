@@ -305,8 +305,14 @@
     </filter>
   </svg>
 
-  <!-- vcl.html background iframe -->
-  <iframe id="vcl-background" src="vcl.html" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-10; border:none; pointer-events:none;"></iframe>
+  <!-- Random background iframe (vcl.html hoặc hack.html) -->
+  <iframe id="background-iframe" src="" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-10; border:none; pointer-events:none;"></iframe>
+  <script>
+    // Random chọn vcl.html hoặc hack.html làm nền mỗi khi refresh
+    const backgrounds = ['vcl.html', 'hack.html'];
+    const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    document.getElementById('background-iframe').src = randomBackground;
+  </script>
 
   <!-- Scripts - Load performance monitor first -->
   <script src="performance-monitor.js"></script>

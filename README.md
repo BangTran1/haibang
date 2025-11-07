@@ -4,14 +4,10 @@ Portfolio cá nhân của Bang với các hiệu ứng tương tác nổi bật 
 
 ## ✨ Tính năng nổi bật
 
-### 🌌 Galaxy Background (Three.js)
-- **Dải Ngân Hà 3D**: Hệ thống sao và tinh vân tạo thành galaxy tuyệt đẹp
-- **Spiral Galaxy**: Mô phỏng thiên hà xoắn ốc với 2000+ ngôi sao
-- **Nebula Clouds**: Các đám mây tinh vân với màu sắc gradient
-- **Shooting Stars**: Sao băng xuất hiện ngẫu nhiên
-- **Constellation Lines**: Các chòm sao với đường nối
-- **Pulsing Stars**: Ngôi sao nhấp nháy với hiệu ứng glow
-- **Interactive Movement**: Galaxy phản ứng với chuột và scroll
+### 🌌 Random Background Effects
+- **VCL Background**: Hiệu ứng galaxy 3D với Three.js (vcl.html)
+- **Hack Background**: Hiệu ứng matrix rain với màu sắc gradient (hack.html)
+- **Random Selection**: Mỗi lần refresh trang sẽ random chọn một trong hai background
 
 ### 🖱️ Tương tác nâng cao
 - **Custom Cursor**: Con trỏ chuột tùy chỉnh với hiệu ứng hover
@@ -41,12 +37,12 @@ Portfolio cá nhân của Bang với các hiệu ứng tương tác nổi bật 
 ## 📁 Cấu trúc file
 
 ```
-por/
+haibang/
 ├── index.html              # File HTML chính
+├── vcl.html                # Galaxy 3D background (Three.js)
+├── hack.html               # Matrix rain background
 ├── styles.css              # CSS styles và animations
 ├── script.js               # JavaScript cơ bản
-├── galaxy-background.js    # Galaxy 3D background
-├── galaxy-effects.js       # Galaxy special effects
 ├── advanced-effects.js     # Hiệu ứng nâng cao
 ├── performance-monitor.js  # Performance optimization
 ├── 1.jpg - 4.jpg          # Hình ảnh cá nhân
@@ -55,22 +51,9 @@ por/
 
 ## 🎯 Tối ưu Performance
 
-### Desktop (>768px)
-- ✅ Tất cả hiệu ứng được kích hoạt
-- ✅ Three.js background đầy đủ
-- ✅ Custom cursor và particle trail
-- ✅ Sound effects
-
-### Tablet (768px - 980px)
-- ⚠️ Giảm opacity Three.js background
-- ❌ Tắt custom cursor
-- ✅ Giữ lại animations cơ bản
-
-### Mobile (<768px)
-- ❌ Tắt Three.js background
-- ❌ Tắt custom cursor và particle trail
-- ❌ Tắt sound effects
-- ✅ Giữ lại animations đơn giản
+- **Performance Monitor**: Tự động phát hiện và tối ưu cho thiết bị yếu
+- **Responsive Design**: Tự động điều chỉnh hiệu ứng theo kích thước màn hình
+- **Lazy Loading**: Tối ưu tải trang và tài nguyên
 
 ## 🛠️ Tùy chỉnh
 
@@ -92,20 +75,20 @@ Thêm class `prefers-reduced-motion` để tắt animations:
 }
 ```
 
-### Tùy chỉnh particles
-Chỉnh sửa trong `three-effects.js`:
+### Thay đổi background
+Để thêm hoặc thay đổi background, chỉnh sửa mảng `backgrounds` trong `index.html`:
 ```javascript
-const particleCount = 2000; // Số lượng particles
-const radius = Math.random() * 100 + 50; // Kích thước vùng particles
+const backgrounds = ['vcl.html', 'hack.html', 'new-background.html'];
 ```
 
 ## 🌟 Hiệu ứng đặc biệt
 
-1. **Glitch Text**: Hover vào text có class `gradient-text`
-2. **Magnetic Buttons**: Hover vào các nút để thấy hiệu ứng từ tính
-3. **3D Particles**: Di chuyển chuột để tương tác với background 3D
+1. **Random Background**: Mỗi lần refresh sẽ có background khác nhau
+2. **Glitch Text**: Hover vào text có class `gradient-text`
+3. **Magnetic Buttons**: Hover vào các nút để thấy hiệu ứng từ tính
 4. **Scroll Progress**: Thanh tiến trình ở đầu trang
 5. **Ripple Effect**: Click vào nút để thấy hiệu ứng sóng
+6. **Typing Animation**: Hiệu ứng gõ chữ cho tiêu đề
 
 ## 📱 Responsive Design
 

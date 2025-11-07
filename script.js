@@ -114,52 +114,11 @@ class PortfolioEffects {
     setTimeout(typeWriter, 1000);
   }
 
-  // Custom cursor effects
+  // Custom cursor effects - Disabled (using mouse-effects.js instead)
   initCursorEffects() {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    document.body.appendChild(cursor);
-
-    // Cursor styles
-    const style = document.createElement('style');
-    style.textContent = `
-      .custom-cursor {
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: linear-gradient(135deg, var(--brand), var(--brand-3));
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        mix-blend-mode: difference;
-        transition: transform 0.1s ease;
-        opacity: 0;
-      }
-      
-      .custom-cursor.hover {
-        transform: scale(2);
-        background: rgba(221, 209, 233, 0.8);
-      }
-      
-      @media (hover: none) {
-        .custom-cursor { display: none; }
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Track mouse movement
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX - 10 + 'px';
-      cursor.style.top = e.clientY - 10 + 'px';
-      cursor.style.opacity = '1';
-    });
-
-    // Hover effects
-    const hoverElements = document.querySelectorAll('a, button, .btn, .card');
-    hoverElements.forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
+    // Cursor effects are now handled by mouse-effects.js
+    // This function is kept for compatibility but does nothing
+    return;
   }
 
   // Parallax effects - tối ưu với throttling

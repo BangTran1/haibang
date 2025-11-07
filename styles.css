@@ -56,20 +56,6 @@ body{
   filter: contrast(1.8) brightness(1.5) saturate(1.3) !important;
 }
 
-/* Legacy backgrounds */
-.galaxy-background, .portfolio-3d-background, .simple-galaxy, .galaxy-fallback, .realistic-galaxy, .universe-galaxy, .stars-background {
-  display: none !important;
-}
-
-/* Simple galaxy stars */
-.simple-galaxy .star {
-  will-change: transform, opacity;
-}
-
-.simple-galaxy .nebula {
-  will-change: transform, opacity;
-}
-
 /* Ensure content is above galaxy */
 .container, header, footer {
   position: relative;
